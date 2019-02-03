@@ -1,0 +1,59 @@
+<view hidden="{{packup}}" class='pop_view'>
+  <view class='outer'>
+    <movable-area class="move_area">
+      <block wx:for="{{list}}" wx:key="{{index}}">
+        <view class='item' id="v_{{index}}" data-index="{{index}}" data-url="{{item}}" bindlongpress='_longtap' bindtouchstart='touchs' bindtouchend='touchend' bindtouchmove='touchm'>
+          <image src="{{item}}" class='item_img'></image>
+          <view class='close'>
+            <view data-index="{{index}}" bindtap='rmImg'>x</view>
+          </view>
+        </view>
+
+      </block>
+
+      <movable-view x="{{x}}" y="{{y}}" direction="all" damping="{{5000}}" friction="{{1}}" disabled="{{disabled}}">
+        <view class='item-move' hidden='{{hidden}}'>
+          <block wx:if="{{movingUrl}}">
+            <image src="{{movingUrl}}" class='item_img'></image>
+          </block>
+        </view>
+      </movable-view>
+    </movable-area>
+
+    <view class='tips tips_bottom'>
+      <block> 点击右侧可收起哦</block>
+    </view>
+
+    <view class='packup'>
+      <button bindtap='packUpToggle'>
+        <text class="down-arrow active"></text> 收起
+      </button>
+    </view>
+  </view>
+</view>
+
+<!-- packup -->
+<view hidden="{{!packup}}" class='outer'>
+  <view class='inner'>
+    <view class="move_area area_packup">
+      <block wx:for="{{list}}" wx:key="{{index}}">
+        <view class='item' id="v_{{index}}" data-index="{{index}}">
+          <image src="{{item}}" class='item_img'></image>
+          <view class='close'>
+            <view data-index="{{index}}" bindtap='rmImg'>x</view>
+          </view>
+        </view>
+      </block>
+    </view>
+
+    <view class='tips tips_auto'>
+      <block> 点击右侧可展开查看全部，长按图片可拖动排序哦</block>
+    </view>
+    <view class='packup'>
+      <button bindtap='packUpToggle'>
+        <text class="down-arrow"></text> 展开
+      </button>
+    </view>
+
+  </view>
+</view>

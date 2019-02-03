@@ -1,0 +1,153 @@
+/* test/test.wxss */
+.pop_view{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top:0;
+  left:0;
+  z-index: 1000;
+  overflow: hidden;
+}
+
+.outer {
+  width: 100%;
+  height: 100%;
+  background-color: #f6f6f6;
+  box-shadow: 3px 3px 10px rgba(136, 136, 136, 0.4);
+}
+
+
+.inner {
+  position: relative;
+}
+
+.move_area {
+  width: 100%;
+  height: 100%;
+  margin-left: 10rpx;
+}
+
+.item {
+  display: inline-block;
+  margin: 15rpx;
+  margin-top: 25rpx;
+  width: 150rpx;
+  height: 150rpx;
+  box-shadow: 3px 3px 6px rgba(112, 128, 144, 0.7);
+  border-radius: 15rpx;
+  line-height: 150rpx;
+  position: relative;
+}
+
+.item_img {
+  display: inline-block;
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 15rpx;
+}
+
+.item-move {
+  display: inline-block;
+  width: 150rpx;
+  height: 150rpx;
+  border: 5rpx solid #09bb07;
+  border-radius: 15rpx; 
+}
+
+.tips_bottom{
+   bottom: 0;
+  left:0;
+  width: 100%;
+  position: absolute;
+}
+
+.tips_auto{
+  width: auto;
+}
+
+.tips {
+  padding-left: 20rpx;
+  background-color: rgba(255, 255, 255, 0.8);
+  line-height: 80rpx;
+  font-size: 9pt;
+  text-align: left;
+  color: #888;
+}
+
+.packup {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+.packup button {
+  color: #09bb07;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 20rpx;
+  font-size: 11pt;
+  line-height: 80rpx;
+  padding-left: 10rpx;
+  padding-right: 20rpx;
+  text-align: center;
+  margin: 0;
+}
+
+button::after {
+  border: none;
+}
+
+.area_packup {
+  height: 180rpx;
+  overflow: scroll;
+}
+
+.down-arrow {
+  display: inline-block;
+  position: relative;
+  width: 40rpx;
+  height: 30rpx;
+  /* margin-right: 20rpx; */
+}
+
+.down-arrow::after {
+  display: inline-block;
+  content: " ";
+  height: 20rpx;
+  width: 20rpx;
+  border-width: 0 6rpx 6rpx 0;
+  border-color: #09bb07;
+  border-style: solid;
+  transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+  transform-origin: center;
+  transition: transform 0.3s;
+  position: absolute;
+  top: 50%;
+  right: 10rpx;
+  margin-top: -10rpx;
+}
+
+.down-arrow.active::after {
+  transform-origin: center;
+  transform: rotate(-135deg);
+  transition: transform 0.3s;
+}
+
+.close {
+  position: absolute;
+  width: 36rpx;
+  height: 36rpx;
+  right: -15rpx;
+  top: -15rpx;
+}
+
+.close view {
+  color: whitesmoke;
+  background-color: rgba(14, 14, 14, 0.7);
+  border-radius: 18rpx;
+  font-size: 10pt;
+  line-height: 36rpx;
+  font-weight: 700;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}

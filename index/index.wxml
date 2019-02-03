@@ -1,0 +1,6 @@
+<view style='height:100px;text-align:center'>
+  图片排序组件
+</view>
+<view class='photo_area' hidden="{{photoList.length==0}}">
+  <movesort list="{{photoList}}" packup="{{!showSort}}" bindsorted="onSorted" bindpackup="onPackup"></movesort>
+</view>
